@@ -14,7 +14,8 @@
 			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": "https://dummy.restapiexample.com/api/v1/employees"
 			},
 			"response": []
 		},
@@ -26,7 +27,17 @@
 			},
 			"request": {
 				"method": "POST",
-				"header": []
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n            \"id\": 10,\r\n            \"employee_name\": \"Priya\",\r\n            \"employee_salary\": \"40000\",\r\n            \"employee_age\": \"24\",\r\n            \"profile_image\": \"\"\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://dummy.restapiexample.com/api/v1/employees"
 			},
 			"response": []
 		}
