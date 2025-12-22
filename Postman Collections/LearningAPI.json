@@ -1,0 +1,22 @@
+{
+	"info": {
+		"_postman_id": "3a34ff04-b576-42ff-90ed-8367f7f473e8",
+		"name": "LearningPurpose",
+		"description": "This collection for the learning purpose of API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GETRequest",
+			"id": "63b6db09-8c97-4e5c-88f8-a95754fa3d44",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
