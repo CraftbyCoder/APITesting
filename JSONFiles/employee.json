@@ -1,0 +1,28 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "employeeId": "EMP001",
+      "name": "Priya Dharshini",
+      "designation": "QA Analyst",
+      "contactNo": "9876543210",
+      "email": "priya.qa@example.com"
+    },
+    {
+      "id": "2",
+      "employeeId": "EMP002",
+      "name": "Arjun Kumar",
+      "designation": "Automation Tester",
+      "contactNo": "9123456780",
+      "email": "arjun.auto@example.com"
+    },
+    {
+      "id": "3",
+      "employeeId": "EMP003",
+      "name": "Meena Raj",
+      "designation": "Manual Tester",
+      "contactNo": "9988776655",
+      "email": "meena.test@example.com"
+    }
+  ]
+}

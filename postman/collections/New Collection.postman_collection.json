@@ -1,0 +1,227 @@
+{
+  "info": {
+    "_postman_id": "a0474252-fd3b-4590-a7e1-9a216eb6ce3b",
+    "name": "CreatingOwnAPI",
+    "description": "### Steps to Set Up JSON Server for API Testing\n\n#### 1\\. Install Node.js\n\n- Download and install **Node.js (LTS version)** from the official website.\n    \n- During installation, Node.js automatically installs **npm (Node Package Manager)**.\n    \n\n**Environment Variable**\n\n- Ensure Node.js is added to the system PATH.\n    \n- C:\\\\Program Files\\\\nodejs\\\\\n    \n\n---\n\n#### 2\\. Verify Node.js and npm Installation\n\nOpen **Command Prompt** and run:\n\n```\nnode --version\nnpm --version\n\n ```\n\nIf both commands return version numbers, Node.js and npm are installed successfully.\n\n---\n\n#### 3\\. Install JSON Server\n\nIn Command Prompt, run:\n\n```\nnpm install -g json-server\n\n ```\n\nExpected output:\n\n- Packages installed successfully\n    \n- Messages like “packages are looking for funding” or “npm notice” are **informational only**, not errors.\n    \n\nTo confirm installation:\n\n```\njson-server --version\n\n ```\n\n---\n\n#### 4\\. Create a JSON Data File\n\nCreate a JSON file (for example: `employee.json`) with sample data.\n\nExample:\n\n```\n{\n  \"employees\": [\n    {\n      \"id\": 1,\n      \"employeeId\": \"EMP001\",\n      \"name\": \"Priya Dharshini\",\n      \"designation\": \"QA Analyst\",\n      \"contactNo\": \"9876543210\"\n    }\n  ]\n}\n\n ```\n\n---\n\n#### 5\\. Start JSON Server\n\nNavigate to the folder containing the JSON file and run:\n\n```\njson-server --watch employee.json\n\n ```\n\nJSON Server will start locally, usually at:\n\n```\nhttp://localhost:3000\n\n ```\n\n---\n\n#### 6\\. Use the API Endpoints for Practice\n\nExample endpoint:\n\n```\nhttp://localhost:3000/employees\n\n ```\n\nYou can now practice API methods using Postman:\n\n- **GET** – retrieve employee data\n    \n- **POST** – create new employee\n    \n- **PUT / PATCH** – update employee data\n    \n- **DELETE** – remove employee",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get request",
+      "id": "051056c0-3ddd-4394-857c-06ae5674e369",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/employees",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "employees"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "id": "dbc1aa69-28ab-474e-9289-e7636516f6e4",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"id\": \"4\",\r\n        \"employeeId\": \"EMP004\",\r\n        \"name\": \"Priya\",\r\n        \"designation\": \"QA\",\r\n        \"contactNo\": \"9876543564\",\r\n        \"email\": \"priya.qa@outlook.com\"\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/employees",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "employees"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "RE-run to verify new data",
+      "id": "c39eb792-54cb-4112-82c2-1b0d4e648c0a",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/employees/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "employees",
+            "4"
+          ]
+        },
+        "description": "re-run to verify the created data is add to database - POST"
+      },
+      "response": []
+    },
+    {
+      "name": "PUT request",
+      "id": "e86d067b-1185-4dd2-b389-e472c6cbc7e8",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"id\": \"4\",\r\n        \"employeeId\": \"EMP014\",\r\n        \"name\": \"Divya\",\r\n        \"designation\": \"QA\",\r\n        \"contactNo\": \"9876543564\",\r\n        \"email\": \"Divya.qa@outlook.com\"\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/employees/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "employees",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "RE-run to verify PUT",
+      "id": "781a60eb-e613-42d4-a7ba-a7338ac85562",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/employees/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "employees",
+            "4"
+          ]
+        },
+        "description": "re-run to verify the created data is add to database - POST"
+      },
+      "response": []
+    },
+    {
+      "name": "PATCH request",
+      "id": "e37feaa5-8a4f-46df-85e3-f9ad807c13ba",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"employeeId\": \"EMP004\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/employees/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "employees",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "RE-run to verify PATCH",
+      "id": "5c606f1a-eb14-46c3-8f91-a20cfeee8a70",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/employees/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "employees",
+            "4"
+          ]
+        },
+        "description": "re-run to verify the created data is add to database - PATCH"
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE request",
+      "id": "7cc305f7-b8cb-453f-962e-c6c8da9fd682",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/employees/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "employees",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "RE-run to verify DELETE",
+      "id": "0ef8373d-c0e8-4e41-8f9a-48b5cf3ff93c",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/employees",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "employees"
+          ]
+        },
+        "description": "re-run to verify the created data is add to database - PATCH"
+      },
+      "response": []
+    }
+  ]
+}
